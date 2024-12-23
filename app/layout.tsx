@@ -6,6 +6,7 @@ import { Container, Grid, GridItem } from "@chakra-ui/react";
 import Footer from "@/components/layout/Footer";
 import SideBar from "@/components/layout/SideBar";
 import Header from "@/components/layout/Header/Header";
+import "react-photo-view/dist/react-photo-view.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
