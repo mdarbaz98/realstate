@@ -19,7 +19,7 @@ export default function HeroDescription() {
         itaque ea aut perferendis inventore quia beatae facilis, debitis
         consequuntur. Beatae repudiandae eligendi id accusamus.
       </Text>
-      <Button>Download Brochure</Button>
+      <Button colorPalette={"yellow"}>Download Brochure</Button>
     </Card>
   );
 }

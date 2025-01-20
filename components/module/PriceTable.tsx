@@ -13,7 +13,8 @@ export default function PriceTable() {
             textTransform={"capitalize"}
             hideBelow={"lg"}
             size="sm"
-            interactive>
+            interactive
+          >
             <Table.Header>
               <Table.Row>
                 <Table.ColumnHeader>Carpet Area</Table.ColumnHeader>
@@ -29,7 +30,9 @@ export default function PriceTable() {
                   <Table.Cell textAlign="end">
                     <Flex justifyContent={"space-between"}>
                       <Text>{item.price}</Text>{" "}
-                      <Button size={"sm"}>Price Breakup</Button>
+                      <Button size={"sm"} colorPalette={"yellow"}>
+                        Price Breakup
+                      </Button>
                     </Flex>
                   </Table.Cell>
                 </Table.Row>
@@ -43,7 +46,8 @@ export default function PriceTable() {
                 key={idx}
                 textAlign={"center"}
                 bg={idx === 0 ? "gray.100" : "white"}
-                p={4}>
+                p={4}
+              >
                 <Text textStyle={{ base: "xl", md: "3xl" }} fontWeight={700}>
                   {item.type}
                 </Text>
@@ -60,7 +64,7 @@ export default function PriceTable() {
             maxH={{ base: "300px", lg: "full" }}
             borderRadius="md"
           />
-          <Button>Download Brochure</Button>
+          <Button colorPalette={"yellow"}>Download Brochure</Button>
         </GridItem>
       </Grid>
     </Card>
