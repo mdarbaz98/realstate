@@ -5,7 +5,6 @@ import * as Yup from "yup";
 import { Field } from "../ui/field";
 import { Button } from "../ui/button";
 import { toaster } from "@/components/ui/toaster";
-import emailjs from "emailjs-com";
 
 type MyInputs = {
   name: string;
@@ -38,23 +37,21 @@ export default function ContactForm() {
     validationSchema: enquirySchema,
     onSubmit: async (values) => {
       console.log(values);
-      const res = await emailjs.sendForm(
-        "service_itdaqyp",
-        "template_qhgho2i",
-        values.name,
-        "user_itdaqyp"
-      );
-      if (res.status === 200) {
-        toaster.create({
-          description: "Message sent successfully",
-          type: "success",
-        });
-        resetForm();
-      } else {
-        toaster.create({
-          description: "Error sending message",
-          type: "error",
-        });
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        })
+  
+        if (response.ok) {
+          toaster.success({ title: 'Message sent successfully!' })
+          resetForm()
+        }
+      } catch (error) {
+        console.log('Error sending message:', error)
       }
     },
   });

@@ -1,3 +1,4 @@
+import MainLayout from "@/components/layout/MainLayout";
 import BannerCarousel from "@/components/module/BannerCarousel";
 import Gallery from "@/components/module/Gallery";
 import HeroDescription from "@/components/module/HeroDescription";
@@ -7,12 +8,14 @@ import { Grid } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Grid spaceY={10}>
-      <BannerCarousel />
-      <HeroDescription />
-      <PriceTable />
-      <ImageSlider />
-      <Gallery />
-    </Grid>
+    <MainLayout>
+      <Grid spaceY={10}>
+        <BannerCarousel />
+        <HeroDescription />
+        <PriceTable />
+        <ImageSlider />
+        <Gallery />
+      </Grid>
+    </MainLayout>
   );
 }
